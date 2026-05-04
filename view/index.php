@@ -43,7 +43,7 @@ include "../model/kho.php";
             header("Location: index.php?act=menu");
             break;
         case 'order':
-            include 'order.php';
+            include 'orders.php';
             break;
         case 'inventory':
             include 'inventory.php';
