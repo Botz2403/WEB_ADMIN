@@ -23,6 +23,7 @@
         .gradient-purple   { background: linear-gradient(135deg, #7B1FA2, #4A148C); }
         .gradient-teal     { background: linear-gradient(135deg, #00838F, #006064); }
         .gradient-rose     { background: linear-gradient(135deg, #C62828, #B71C1C); }
+        .gradient-gold     { background: linear-gradient(135deg, #FBC02D, #F57F17); }
         /* Sidebar */
         .sidebar-link { display:flex; align-items:center; gap:12px; padding:10px 16px; border-radius:12px; transition:all .2s; color:#9CA3AF; }
         .sidebar-link:hover { background:rgba(255,255,255,.1); color:#fff; }

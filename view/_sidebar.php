@@ -24,6 +24,9 @@
         <a href="index.php?act=order" class="sidebar-link <?= $activePage==='orders'?'active':'' ?>">
             <span class="text-xl">📋</span> Đơn Hàng
         </a>
+        <a href="index.php?act=tables" class="sidebar-link <?= $activePage==='tables'?'active':'' ?>">
+            <span class="text-xl">🪑</span> Quản Lý Bàn
+        </a>
         <a href="index.php?act=menu" class="sidebar-link <?= $activePage==='menu'?'active':'' ?>">
             <span class="text-xl">🍜</span> Quản Lý Menu
         </a>
@@ -42,6 +45,9 @@
         </a>
 
         <p class="text-gray-500 text-xs uppercase tracking-wider px-4 mt-4 mb-2">Quản lý</p>
+        <a href="index.php?act=customers" class="sidebar-link <?= $activePage==='customers'?'active':'' ?>">
+            <span class="text-xl">🧑‍🤝‍🧑</span> Khách Hàng
+        </a>
         <a href="index.php?act=staff" class="sidebar-link <?= $activePage==='staff'?'active':'' ?>">
             <span class="text-xl">👥</span> Nhân Viên
         </a>

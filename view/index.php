@@ -51,8 +51,14 @@ include "../model/kho.php";
         case 'dinh_muc':
             include 'dinh_muc.php';
             break;
+        case 'customers':
+            include 'customers.php';
+            break;
         case 'staff':
             include 'staff.php';
+            break;
+        case 'tables':
+            include 'tables.php';
             break;
         case 'reports':
             include 'reports.php';
@@ -60,7 +66,6 @@ include "../model/kho.php";
         case 'marketing':
             include 'marketing.php';
             break;
-        case 'setting':
         case 'settings':
             include 'settings.php';
             break;
