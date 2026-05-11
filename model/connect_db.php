@@ -4,7 +4,7 @@ function connectdb(){
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
-    $port = 3306; // Đảm bảo port này đúng với XAMPP của bạn (thử đổi sang 3306 nếu vẫn lỗi)
+    $port = 3307; // Đảm bảo port này đúng với XAMPP của bạn (thử đổi sang 3306 nếu vẫn lỗi)
 
     if($conn === null){
         try {

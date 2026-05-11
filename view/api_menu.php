@@ -28,7 +28,7 @@ try {
     // Trong api_menu.php, trước khi echo json_encode($result);
 foreach ($result as &$item) {
     $item['gia_ban'] = (int)$item['gia_ban'];
-    $item['trang_thai'] = (int)$item['trang_thai'];
+    // Giữ nguyên trang_thai là chuỗi (dang_ban/tam_dung) để app dễ xử lý
     
     // Thêm dòng này để nối link ảnh
     if (!empty($item['duong_dan_anh'])) {

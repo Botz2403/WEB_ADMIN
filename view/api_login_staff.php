@@ -13,26 +13,31 @@ if (isset($data['email']) && isset($data['password'])) {
 
     try {
         $conn = connectdb();
-        $stmt = $conn->prepare("SELECT ma_nhan_vien, ho_ten, vai_tro, chi_nhanh, trang_thai FROM nhan_vien WHERE email = ? AND mat_khau = ?");
+        $stmt = $conn->prepare("SELECT ma_nhan_vien, ho_ten, vai_tro FROM nhan_vien WHERE email = ? AND mat_khau = ?");
         $stmt->execute([$email, $password]);
         
         $staff = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($staff) {
-            if ($staff['trang_thai'] === 'inactive') {
-                echo json_encode(["status" => "error", "message" => "Tài khoản của bạn đã bị khóa."]);
-            } else {
-                echo json_encode([
-                    "status" => "success", 
-                    "message" => "Đăng nhập thành công",
-                    "data" => [
-                        "id" => $staff['ma_nhan_vien'],
-                        "name" => $staff['ho_ten'],
-                        "role" => $staff['vai_tro'],
-                        "branch" => $staff['chi_nhanh']
-                    ]
-                ]);
+            // Map roles for the Mobile App
+            $rawRole = strtolower($staff['vai_tro']);
+            $appRole = 'staff'; // default
+            
+            if ($rawRole == 'bep' || $rawRole == 'kitchen') {
+                $appRole = 'kitchen';
+            } else if ($rawRole == 'admin' || $rawRole == 'nhanvien' || $rawRole == 'staff') {
+                $appRole = 'staff';
             }
+
+            echo json_encode([
+                "status" => "success", 
+                "message" => "Đăng nhập thành công",
+                "data" => [
+                    "ma_nhan_vien" => $staff['ma_nhan_vien'],
+                    "ho_ten" => $staff['ho_ten'],
+                    "vai_tro" => $appRole
+                ]
+            ]);
         } else {
             echo json_encode(["status" => "error", "message" => "Sai email hoặc mật khẩu nhân viên."]);
         }

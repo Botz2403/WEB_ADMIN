@@ -19,7 +19,7 @@ try {
         return [
             "ma_ban" => $table['ma_ban'],
             "ten_ban" => $table['ten_ban'],
-            "so_cho_ngoi" => (int)$table['suc_chua'],
+            "suc_chua" => (int)$table['suc_chua'],
             "trang_thai" => $table['trang_thai'], // "trong", "co_khach", "dat_truoc", "bao_tri"
             
             // Map dữ liệu khu_vuc cho khớp với App Android
